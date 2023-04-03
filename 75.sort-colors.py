@@ -5,12 +5,31 @@
 #
 
 # @lc code=start
+
+
+from typing import List
+
+
+def swap(nums, a, b):
+    l = nums[a]
+    nums[a] = nums[b]
+    nums[b] = l
+
+
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-        nums.sort()
-        
-# @lc code=end
+        curr = 1
+        while curr < len(nums):
+            l = curr - 1
+            r = curr
+            while l >= 0 and nums[r] < nums[l]:
+                swap(nums, r, l)
+                l -= 1
+                r -= 1
+            curr += 1
 
+
+# @lc code=end
