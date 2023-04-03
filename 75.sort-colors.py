@@ -10,10 +10,8 @@
 from typing import List
 
 
-def swap(nums, a, b):
-    l = nums[a]
-    nums[a] = nums[b]
-    nums[b] = l
+def swap(nums, a,b):
+    nums[a], nums[b] = nums[b], nums[a]
 
 
 class Solution:
