@@ -30,13 +30,13 @@ class Solution:
         try:
             tortoise = head
             hare = head.next
-            while tortoise != hare:
+            while True:
+                if tortoise == hare:
+                    return True
                 tortoise = tortoise.next
                 hare = hare.next.next
         except:
             return False
-
-        return True
 
 
 # @lc code=end
