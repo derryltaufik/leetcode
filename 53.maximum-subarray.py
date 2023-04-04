@@ -34,10 +34,19 @@ class Solution:
 
             return max(nums[index] + local_maximum_cache(index - 1), nums[index])
 
-        for i in range(len(nums)):
-            best = max(best, local_maximum_cache(i))
+        # for i in range(len(nums)):
+        #     best = max(best, local_maximum_cache(i))
 
-        return best
-
+        # return best
+    
+        def iterative():
+            curSum = 0
+            maxSum = nums[0]
+            for n in nums:
+                curSum = max(curSum + n, n)
+                maxSum = max(maxSum,curSum)
+            return maxSum
+        
+        # return iterative()
 
 # @lc code=end
